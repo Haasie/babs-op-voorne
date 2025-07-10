@@ -1,3 +1,23 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+# netlify.toml
+
+[build]
+  # De command die Netlify moet uitvoeren om je site te bouwen
+  command = "hugo --minify"
+  # De map waar de gebouwde site zich bevindt
+  publish = "public"
+
+[build.environment]
+  # Specificeer de Hugo-versie die Netlify moet gebruiken.
+  # Gebruik hier een recente, stabiele versie.
+  # Je kunt de nieuwste versies vinden op: https://github.com/gohugoio/hugo/releases
+  HUGO_VERSION = "0.127.0" # Pas dit aan naar een gewenste, recente versie
+
+# Optionele configuratie voor de Decap CMS admin
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/:splat"
+  status = 200
+
+# Optionele configuratie voor Netlify Forms
+# Zorg ervoor dat je formulier in je HTML een data-netlify="true" attribuut heeft.
+# Bijvoorbeeld: <form name="contact" method="POST" data-netlify="true">
