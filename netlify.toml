@@ -18,6 +18,10 @@
   to = "/admin/:splat"
   status = 200
 
-# Optionele configuratie voor Netlify Forms
+# Configuratie voor Netlify Forms
 # Zorg ervoor dat je formulier in je HTML een data-netlify="true" attribuut heeft.
 # Bijvoorbeeld: <form name="contact" method="POST" data-netlify="true">
+[forms]
+  # Je kunt hier extra configuratie toevoegen voor je formulieren,
+  # zoals spamfiltering of meldingen. Voor nu laten we het leeg.
+  # Netlify detecteert formulieren automatisch op basis van het data-netlify attribuut.
