@@ -203,7 +203,7 @@
     <!-- Content komt van content/werkwijze.md, beheerd via CMS -->
     <section id="werkwijze" class="bg-secondary py-16 px-4 rounded-lg shadow-inner">
         <div class="container mx-auto">
-            <h2 class="section-heading">Onze Werkwijze</h2>
+            <h2 class="section-heading text-left">Onze Werkwijze</h2>
             {{ with (index (where .Site.RegularPages "File.Base" "werkwijze.md") 0) }}
                 {{ .Params.intro_text | markdownify }}
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -282,18 +282,18 @@
     <!-- Blog (Nieuws & Inspiratie) Sectie -->
     <!-- Toont de laatste 3 blogposts, content komt van content/blog/ via CMS -->
     <section id="blog" class="container mx-auto py-16 px-4">
-        <h2 class="section-heading">Nieuws & Inspiratie</h2>
+        <h2 class="section-heading text-left">Nieuws & Inspiratie</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Loop door de laatste 3 blogposts (gesorteerd op datum, nieuwste eerst) -->
             {{ range first 3 (sort (where .Site.RegularPages "Section" "blog") ".Date" "desc") }}
-            <div class="card overflow-hidden">
+            <div class="card overflow-hidden flex flex-col">
                 <!-- Featured Afbeelding uit CMS -->
                 {{ with .Params.featured_image }}
                 <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full h-48 object-cover rounded-t-lg">
                 {{ else }}
                 <img src="https://placehold.co/400x250/A7C7E7/FFFFFF?text=Blog+Afbeelding" alt="Placeholder Blog Afbeelding" class="w-full h-48 object-cover rounded-t-lg">
                 {{ end }}
-                <div class="p-4">
+                <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">{{ .Title }}</h3>
                     <p class="text-gray-600 text-sm mb-4">
                         {{ .Date.Format "02 January 2006" }}
@@ -303,36 +303,36 @@
                     </p>
                     <!-- Introductie tekst uit CMS -->
                     <p class="text-gray-700 mb-4">{{ .Params.intro }}</p>
-                    <a href="{{ .Permalink }}" class="btn-secondary text-sm inline-block">Lees meer</a>
+                    <a href="{{ .Permalink }}" class="btn-secondary text-sm inline-block mt-auto">Lees meer</a>
                 </div>
             </div>
             {{ else }}
             <!-- Placeholder blogposts als er nog geen via CMS zijn -->
-            <div class="card overflow-hidden">
+            <div class="card overflow-hidden flex flex-col">
                 <img src="https://placehold.co/400x250/A7C7E7/FFFFFF?text=Dijkwoning" alt="Trouwen in een dijkwoning" class="w-full h-48 object-cover rounded-t-lg">
-                <div class="p-4">
+                <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Trouwen in een dijkwoning: een unieke sfeer</h3>
                     <p class="text-gray-600 text-sm mb-4">25 juni 2025 | Categorie: Locaties</p>
                     <p class="text-gray-700 mb-4">Ontdek de charme van een huwelijk in een historische dijkwoning. Perfect voor een intieme en sfeervolle ceremonie...</p>
-                    <a href="#" class="btn-secondary text-sm inline-block">Lees meer</a>
+                    <a href="#" class="btn-secondary text-sm inline-block mt-auto">Lees meer</a>
                 </div>
             </div>
-            <div class="card overflow-hidden">
+            <div class="card overflow-hidden flex flex-col">
                 <img src="https://placehold.co/400x250/6C8EBF/FFFFFF?text=Trouwlocaties" alt="Mooiste trouwlocaties" class="w-full h-48 object-cover rounded-t-lg">
-                <div class="p-4">
+                <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">De mooiste trouwlocaties op Voorne-Putten</h3>
                     <p class="text-gray-600 text-sm mb-4">10 juni 2025 | Categorie: Tips</p>
                     <p class="text-gray-700 mb-4">Van historische kastelen tot idyllische boerderijen, Voorne-Putten heeft het allemaal. Een overzicht van de top locaties...</p>
-                    <a href="#" class="btn-secondary text-sm inline-block">Lees meer</a>
+                    <a href="#" class="btn-secondary text-sm inline-block mt-auto">Lees meer</a>
                 </div>
             </div>
-            <div class="card overflow-hidden">
+            <div class="card overflow-hidden flex flex-col">
                 <img src="https://placehold.co/400x250/A7C7E7/FFFFFF?text=Geloften" alt="Geloften schrijven" class="w-full h-48 object-cover rounded-t-lg">
-                <div class="p-4">
+                <div class="p-4 flex flex-col flex-grow">
                     <h3 class="text-xl font-semibold mb-2 text-gray-800">Tips voor het schrijven van je geloften</h3>
                     <p class="text-gray-600 text-sm mb-4">1 juni 2025 | Categorie: Advies</p>
                     <p class="text-gray-700 mb-4">Laat je hart spreken! Met deze tips schrijf je geloften die jullie liefde perfect vangen en iedereen zullen ontroeren...</p>
-                    <a href="#" class="btn-secondary text-sm inline-block">Lees meer</a>
+                    <a href="#" class="btn-secondary text-sm inline-block mt-auto">Lees meer</a>
                 </div>
             </div>
             {{ end }}
