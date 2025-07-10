@@ -203,7 +203,7 @@
     <!-- Content komt van content/werkwijze.md, beheerd via CMS -->
     <section id="werkwijze" class="bg-secondary py-16 px-4 rounded-lg shadow-inner">
         <div class="container mx-auto">
-            <h2 class="section-heading text-left">Onze Werkwijze</h2>
+            <h2 class="section-heading">Onze Werkwijze</h2>
             {{ with (index (where .Site.RegularPages "File.Base" "werkwijze.md") 0) }}
                 {{ .Params.intro_text | markdownify }}
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -282,7 +282,7 @@
     <!-- Blog (Nieuws & Inspiratie) Sectie -->
     <!-- Toont de laatste 3 blogposts, content komt van content/blog/ via CMS -->
     <section id="blog" class="container mx-auto py-16 px-4">
-        <h2 class="section-heading text-left">Nieuws & Inspiratie</h2>
+        <h2 class="section-heading">Nieuws & Inspiratie</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Loop door de laatste 3 blogposts (gesorteerd op datum, nieuwste eerst) -->
             {{ range first 3 (sort (where .Site.RegularPages "Section" "blog") ".Date" "desc") }}
