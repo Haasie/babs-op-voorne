@@ -1,5 +1,5 @@
 ---
-title: Trouwen in een dijkwoning: een unieke sfeer
+title: "Trouwen in een dijkwoning: een unieke sfeer"
 seo_title: Trouwen in Dijkhuis Voorne | Unieke Huwelijkssfeer
 seo_description: Ontdek de charme van een huwelijk in een historische dijkwoning op Voorne-Putten. Perfect voor een intieme en sfeervolle ceremonie.
 date: 2025-06-25T10:00:00+02:00

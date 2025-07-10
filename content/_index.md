@@ -11,5 +11,5 @@ cta1_text: Onze Werkwijze Ontdekken
 cta1_link: https://babs-op-voorne.netlify.app/werkwijze/
 cta2_text: Neem Contact Op
 cta2_link: https://babs-op-voorne.netlify.app/contact/
-geo_focus_text: Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis, Brielle, Westvoorne, Nissewaard en meer.
+geo_focus_text: "Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis, Brielle, Westvoorne, Nissewaard en meer."
 ---
