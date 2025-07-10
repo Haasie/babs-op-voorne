@@ -12,7 +12,7 @@ public_folder: "/uploads" # De publieke URL voor de afbeeldingen (relatief aan d
 
 # Collecties: Definieer hier je content types
 collections:
-  - name: "pages" # Interne naam voor de collectie
+  - name: "home" # Interne naam voor de collectie
     label: "Pagina's" # Weergavenaam in het CMS
     files: # Gebruik 'files' voor singleton pagina's (pagina's die maar één keer voorkomen)
       - file: "content/_index.md" # Pad naar het Markdown bestand voor de homepagina
