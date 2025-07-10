@@ -1,3 +1,21 @@
+---
+title: Babs op Voorne
+headline: Jouw Persoonlijke BABS voor een Onvergetelijke Trouwceremonie
+subheadline: Een huwelijkssluiting die écht bij jullie past, vol warmte,
+  oprechtheid en liefde.
+intro_text: Ik ben Richard, jullie toegewijde Buitengewoon Ambtenaar van de
+  Burgerlijke Stand, met een passie voor het creëren van unieke en persoonlijke
+  trouwceremonies. Ik geloof dat jullie trouwdag een weerspiegeling moet zijn
+  van wie jullie zijn, en ik zet me met hart en ziel in om dat te realiseren.
+  Mijn kernwaarden respect, eerlijkheid, oprechtheid en gelijkheid vormen de
+  basis van elke ontmoeting en elke ceremonie.
+cta1_text: Werkwijze ontdekken
+cta1_link: https://babs-op-voorne.netlify.app/#werkwijze
+cta2_text: Neem contact op
+cta2_link: https://babs-op-voorne.netlify.app/#contact
+geo_focus_text: "Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis,
+  Brielle, Westvoorne, Nissewaard en meer."
+---
 title: Home
 seo_title: Babs op Voorne | Jouw Persoonlijke Trouwambtenaar
 seo_description: Ontdek een unieke en persoonlijke huwelijksceremonie op maat in de regio Voorne-Putten. Jouw BABS voor een onvergetelijke dag.
