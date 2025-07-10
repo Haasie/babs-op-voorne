@@ -3,7 +3,7 @@ title: Home
 seo_title: Babs op Voorne | Jouw Persoonlijke Trouwambtenaar
 seo_description: Ontdek een unieke en persoonlijke huwelijksceremonie op maat in
   de regio Voorne-Putten. Jouw BABS voor een onvergetelijke dag.
-headline: Jouw Persoonlijke BABS voor een Onvergetelijke Trouwceremonie op Voorne-Putten
+headline: Jouw Persoonlijke BABS voor een Onvergetelijke Trouwceremonie
 subheadline: Een huwelijkssluiting die écht bij jullie past, vol warmte,
   oprechtheid en liefde.
 hero_image: /uploads/doodle.jpg
