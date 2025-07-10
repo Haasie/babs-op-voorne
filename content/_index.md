@@ -8,8 +8,8 @@ hero_image: /uploads/doodle.jpg
 intro_text: |
   Welkom bij Babs op Voorne, dé plek voor bruidsparen die dromen van een huwelijksceremonie die hun unieke verhaal vertelt. Ik geloof dat jullie trouwdag een weerspiegeling moet zijn van wie jullie zijn, en ik zet me met hart en ziel in om dat te realiseren.
 cta1_text: Onze Werkwijze Ontdekken
-cta1_link: /werkwijze/
+cta1_link: https://babs-op-voorne.netlify.app/werkwijze/
 cta2_text: Neem Contact Op
-cta2_link: /contact/
+cta2_link: https://babs-op-voorne.netlify.app/contact/
 geo_focus_text: Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis, Brielle, Westvoorne, Nissewaard en meer.
 ---
