@@ -4,25 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager | Babs op Voorne</title>
+    <!-- Netlify Identity Widget (voor authenticatie) -->
+    <!-- Zorg ervoor dat dit script VOOR decap-cms.js wordt geladen -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Decap CMS script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <style>
+        /* Optionele custom styling voor het admin paneel */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Zorg dat de body de volledige hoogte inneemt voor de CMS interface */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* De Decap CMS interface wordt in #nc-root geladen */
+        #nc-root {
+            flex-grow: 1; /* Zorgt ervoor dat de root-div de beschikbare ruimte vult */
+        }
+    </style>
 </head>
 <body>
+    <!-- Dit is de div waar Decap CMS zijn interface in zal laden -->
+    <!-- Het is een goede gewoonte om een specifieke root-div te hebben -->
+    <div id="nc-root"></div>
+
     <script>
-        // Decap CMS initialisatie
-        // Dit script zoekt automatisch naar de config.yml in dezelfde map
-        // en initialiseert het CMS.
-        // Voor Netlify Identity, zorg ervoor dat de Netlify Identity widget is ingeschakeld
-        // in je Netlify site instellingen.
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
+        // Wacht tot de DOM volledig is geladen voordat Decap CMS wordt geïnitialiseerd
+        document.addEventListener('DOMContentLoaded', function() {
+            // Decap CMS initialisatie
+            // Het CMS zoekt automatisch naar de config.yml in dezelfde map (admin/)
+            // en initialiseert zichzelf.
+
+            // Netlify Identity Widget integratie
+            // Dit zorgt ervoor dat de inlog-widget correct verschijnt
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        // Als de gebruiker niet is ingelogd, toon de login widget
+                        window.netlifyIdentity.open();
+                    } else {
+                        // Als de gebruiker is ingelogd, stuur ze naar de admin pagina
+                        // Dit is handig als ze via een andere route op de admin pagina komen
+                        // en al ingelogd zijn.
+                        // document.location.href = "/admin/"; // Optioneel, kan leiden tot een redirect loop als niet voorzichtig gebruikt
+                    }
+                });
+            } else {
+                console.warn("Netlify Identity widget not loaded. Ensure the script tag is correct.");
+            }
+        });
     </script>
 </body>
 </html>
