@@ -4,11 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager | Babs op Voorne</title>
-    <!-- Netlify Identity Widget (voor authenticatie) -->
-    <!-- Zorg ervoor dat dit script VOOR decap-cms.js wordt geladen -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Decap CMS script -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <style>
         /* Optionele custom styling voor het admin paneel */
         body {
@@ -31,29 +26,30 @@
     <!-- Het is een goede gewoonte om een specifieke root-div te hebben -->
     <div id="nc-root"></div>
 
-    <script>
-        // Wacht tot de DOM volledig is geladen voordat Decap CMS wordt geïnitialiseerd
-        document.addEventListener('DOMContentLoaded', function() {
-            // Decap CMS initialisatie
-            // Het CMS zoekt automatisch naar de config.yml in dezelfde map (admin/)
-            // en initialiseert zichzelf.
+    <!-- Alle scripts aan het einde van de body plaatsen voor optimale DOM-beschikbaarheid -->
+    <!-- Netlify Identity Widget (voor authenticatie) -->
+    <!-- Zorg ervoor dat dit script VOOR decap-cms.js wordt geladen -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Decap CMS script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-            // Netlify Identity Widget integratie
-            // Dit zorgt ervoor dat de inlog-widget correct verschijnt
+    <script>
+        // De Decap CMS initialisatie wordt nu automatisch afgehandeld door decap-cms.js
+        // zolang de config.yml in dezelfde map staat.
+        // We hoeven alleen de Netlify Identity widget te initialiseren.
+
+        // Netlify Identity Widget integratie
+        // Dit zorgt ervoor dat de inlog-widget correct verschijnt
+        document.addEventListener('DOMContentLoaded', function() {
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
                     if (!user) {
                         // Als de gebruiker niet is ingelogd, toon de login widget
-                        window.netlifyIdentity.open();
-                    } else {
-                        // Als de gebruiker is ingelogd, stuur ze naar de admin pagina
-                        // Dit is handig als ze via een andere route op de admin pagina komen
-                        // en al ingelogd zijn.
-                        // document.location.href = "/admin/"; // Optioneel, kan leiden tot een redirect loop als niet voorzichtig gebruikt
+                        // window.netlifyIdentity.open(); // Optioneel: opent direct de login popup
                     }
                 });
             } else {
-                console.warn("Netlify Identity widget not loaded. Ensure the script tag is correct.");
+                console.warn("Netlify Identity widget not loaded. Ensure the script tag is correct and Netlify Identity is enabled for your site.");
             }
         });
     </script>
