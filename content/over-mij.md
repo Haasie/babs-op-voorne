@@ -14,4 +14,4 @@ Mijn naam is Richard en ik ben een Buitengewoon Ambtenaar van de Burgerlijke Sta
 
 Mijn kernwaarden, **respect, eerlijkheid, oprechtheid en gelijkheid**, zijn de leidraad in alles wat ik doe. Ik streef ernaar om iedereen na een ontmoeting of gesprek met een beter gevoel achter te laten, of het nu gaat om een eerste kennismaking of de ceremonie zelf. Elk bruidspaar is uniek en verdient een ceremonie die hun liefdesverhaal volledig weerspiegelt.
 
-Ik woon zelf in Hellevoetsluis. Inmiddels al meer dan 40 jaar. Ik Ken de regio Dan ook op mijn duimpje. Dit stelt me in staat om niet alleen een persoonlijke ceremonie te bieden, maar ook waardevolle tips te geven over de mooiste plekjes in de omgeving.
+Ik woon zelf in Hellevoetsluis. Inmiddels al meer dan 40 jaar. Ik ken de regio dan ook op mijn duimpje. Dit stelt me in staat om niet alleen een persoonlijke ceremonie te bieden, maar ook waardevolle tips te geven over de mooiste plekjes in de omgeving.
