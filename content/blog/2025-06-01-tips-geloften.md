@@ -4,7 +4,7 @@ seo_title: Geloften Schrijven Tips | Persoonlijke Trouwgeloften
 seo_description: Leer hoe je persoonlijke en ontroerende trouwgeloften schrijft die jullie liefde perfect vangen en iedereen zullen ontroeren.
 date: 2025-06-01T10:00:00+02:00
 author: Babs op Voorne
-featured_image: /uploads/eindeloos_pad.jpg
+featured_image: /uploads/eindeloos_pad.webp
 intro: Laat je hart spreken! Met deze tips schrijf je geloften die jullie liefde perfect vangen en iedereen zullen ontroeren...
 tags:
   - advies

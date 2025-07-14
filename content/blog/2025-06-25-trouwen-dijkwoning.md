@@ -4,7 +4,7 @@ seo_title: Trouwen in Dijkhuis Voorne | Unieke Huwelijkssfeer
 seo_description: Ontdek de charme van een huwelijk in een historische dijkwoning op Voorne-Putten. Perfect voor een intieme en sfeervolle ceremonie.
 date: 2025-06-25T10:00:00+02:00
 author: Babs op Voorne
-featured_image: /uploads/tuin.jpg
+featured_image: /uploads/tuin.webp
 intro: Ontdek de charme van een huwelijk in een historische dijkwoning. Perfect voor een intieme en sfeervolle ceremonie...
 tags:
   - locaties

@@ -4,7 +4,7 @@ seo_title: Trouwlocaties Voorne-Putten | Top Plekken Huwelijk
 seo_description: Een overzicht van de meest idyllische en unieke trouwlocaties op Voorne-Putten voor jullie droomhuwelijk.
 date: 2025-06-10T10:00:00+02:00
 author: Babs op Voorne
-featured_image: /uploads/poort_der_liefde.jpg
+featured_image: /uploads/poort_der_liefde.webp
 intro: Van historische kastelen tot idyllische boerderijen, Voorne-Putten heeft het allemaal. Een overzicht van de top locaties...
 tags:
   - locaties

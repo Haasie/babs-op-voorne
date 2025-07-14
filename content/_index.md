@@ -6,7 +6,7 @@ seo_description: Ontdek een unieke en persoonlijke huwelijksceremonie op maat in
 headline: Jouw Persoonlijke BABS voor een Onvergetelijke Trouwceremonie
 subheadline: Een huwelijkssluiting die écht bij jullie past, vol warmte,
   oprechtheid en liefde.
-hero_image: /uploads/doodle.jpg
+hero_image: /uploads/doodle.webp
 intro_text: >
   Welkom bij Babs op Voorne, dé plek voor bruidsparen die dromen van een
   huwelijksceremonie die hun unieke verhaal vertelt. Ik geloof dat jullie
