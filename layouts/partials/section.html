@@ -3,11 +3,11 @@
 */}}
 {{ with .page }}
   <section class="my-12">
-    <h2 class="section-heading text-left">{{ .Title }}</h2>
-    <div class="prose max-w-none">{{ .Content }}</div>
+    <h2 class="section-heading text-center">{{ .Title }}</h2>
+    <div class="prose max-w-none mx-auto text-center">{{ .Content }}</div>
     {{ if eq .File.Path "werkwijze/index.md" }}
       {{ with .Params.intro_text }}
-        <div class="mb-8">{{ . | markdownify }}</div>
+        <div class="mb-8 text-center max-w-2xl mx-auto">{{ . | markdownify }}</div>
       {{ end }}
       {{ with .Params.steps }}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -28,7 +28,7 @@
         <div class="mt-16">
           <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Veelgestelde Vragen (FAQ)</h3>
           {{ with $.page.Params.faq_intro }}
-            <div class="mb-6">{{ . | markdownify }}</div>
+            <div class="mb-6 text-center max-w-2xl mx-auto">{{ . | markdownify }}</div>
           {{ end }}
           <div class="space-y-4 max-w-3xl mx-auto">
             {{ range . }}

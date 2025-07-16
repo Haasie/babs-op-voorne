@@ -13,7 +13,7 @@ intro_text: >
   trouwdag een weerspiegeling moet zijn van wie jullie zijn, en ik zet me met
   hart en ziel in om dat te realiseren.
 cta1_text: Werkwijze Ontdekken
-cta1_link: /werkwijze/
+cta1_link: "#werkwijze"
 cta2_text: Neem Contact Op
 cta2_link: /contact/
 geo_focus_text: "Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis,
