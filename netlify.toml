@@ -10,7 +10,7 @@
   # Specificeer de Hugo-versie die Netlify moet gebruiken.
   # Gebruik hier een recente, stabiele versie.
   # Je kunt de nieuwste versies vinden op: https://github.com/gohugoio/hugo/releases
-  HUGO_VERSION = "0.127.0" # Pas dit aan naar een gewenste, recente versie
+  HUGO_VERSION = "0.148.1" # Geüpdatet naar de nieuwste stabiele versie
 
 # Optionele configuratie voor de Decap CMS admin
 [[redirects]]
