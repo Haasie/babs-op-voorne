@@ -1,9 +1,54 @@
 {{/*
-  Gebruik: {{ partial "section.html" (dict "page" (site.GetPage "over-mij")) }}
+  Gebruik: {{ partial "section.html" (dict "page" (site.GetPage "werkwijze")) }}
 */}}
 {{ with .page }}
   <section class="my-12">
     <h2 class="section-heading text-left">{{ .Title }}</h2>
     <div class="prose max-w-none">{{ .Content }}</div>
+    {{ if eq .File.Path "werkwijze/index.md" }}
+      {{ with .Params.intro_text }}
+        <div class="mb-8">{{ . | markdownify }}</div>
+      {{ end }}
+      {{ with .Params.steps }}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {{ range . }}
+            <div class="card text-center">
+              <div class="text-primary text-5xl mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-gray-800">{{ .title }}</h3>
+              <p class="text-gray-600">{{ .description | markdownify }}</p>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+      {{ with .Params.faq_items }}
+        <div class="mt-16">
+          <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Veelgestelde Vragen (FAQ)</h3>
+          {{ with $.page.Params.faq_intro }}
+            <div class="mb-6">{{ . | markdownify }}</div>
+          {{ end }}
+          <div class="space-y-4 max-w-3xl mx-auto">
+            {{ range . }}
+              <div class="card">
+                <details class="group">
+                  <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-gray-800">
+                    {{ .question }}
+                    <span class="group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <p class="mt-2 text-gray-600">{{ .answer | markdownify }}</p>
+                </details>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
   </section>
 {{ end }}
