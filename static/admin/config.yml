@@ -43,7 +43,7 @@ collections:
           - {label: "Portretfoto", name: "portrait_image", widget: "image", required: false, hint: "Professionele portretfoto van de BABS"}
           - {label: "Kernwaarden", name: "values", widget: "list", field: {label: "Waarde", name: "value", widget: "string"}, hint: "Lijst van kernwaarden (bijv. respect, eerlijkheid)"}
 
-      - file: "content/werkwijze.md" # Pad naar het Markdown bestand voor de Werkwijze pagina
+      - file: "content/werkwijze/index.md" # Pad naar het Markdown bestand voor de Werkwijze pagina
         label: "Werkwijze"
         name: "process"
         fields:
@@ -55,7 +55,7 @@ collections:
           - {label: "FAQ Introductie", name: "faq_intro", widget: "markdown", required: false, hint: "Introductietekst voor de FAQ sectie"}
           - {label: "FAQ Items", name: "faq_items", widget: "list", hint: "Veelgestelde vragen en antwoorden", fields: [{label: "Vraag", name: "question", widget: "string"}, {label: "Antwoord", name: "answer", widget: "markdown"}]}
 
-      - file: "content/contact.md" # Pad naar het Markdown bestand voor de Contact pagina
+      - file: "content/contact/index.md" # Pad naar het Markdown bestand voor de Contact pagina
         label: "Contact"
         name: "contact"
         fields:
