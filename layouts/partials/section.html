@@ -1,0 +1,9 @@
+{{/*
+  Gebruik: {{ partial "section.html" (dict "page" (site.GetPage "over-mij")) }}
+*/}}
+{{ with .page }}
+  <section class="my-12">
+    <h2 class="section-heading text-left">{{ .Title }}</h2>
+    <div class="prose max-w-none">{{ .Content }}</div>
+  </section>
+{{ end }}

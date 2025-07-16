@@ -166,107 +166,30 @@
     </section>
 
     <!-- Over mij (gedeeltelijk op homepage) -->
-    <!-- Content komt van content/over-mij.md, beheerd via CMS -->
     <section id="over-mij" class="container mx-auto py-16 px-4">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-            <div class="md:w-1/3 flex justify-center">
-                {{ with (index (where .Site.RegularPages "File.Base" "over-mij.md") 0) }}
-                    {{ with .Params.portrait_image }}
-                    <img src="{{ . | relURL }}" alt="Portret van Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
-                    {{ else }}
-                    <img src="/uploads/babsrichard.jpg" alt="Placeholder Portret Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
-                {{ end }}
-                {{ else }}
-                <img src="/uploads/babsrichard.jpg" alt="Placeholder Portret Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
-                {{ end }}
-            </div>
-            <div class="md:w-2/3 text-center md:text-left">
-                <h2 class="section-heading text-left">Over mij</h2>
-                {{ with site.GetPage "over-mij" }}
-                  {{ .Content }}
-                {{ end }}
-            </div>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/3 flex justify-center">
+          {{ with (site.GetPage "over-mij") }}
+            {{ with .Params.portrait_image }}
+            <img src="{{ . | relURL }}" alt="Portret van Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
+            {{ else }}
+            <img src="/uploads/babsrichard.jpg" alt="Placeholder Portret Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
+            {{ end }}
+          {{ else }}
+            <img src="/uploads/babsrichard.jpg" alt="Placeholder Portret Babs" class="rounded-lg shadow-lg w-full max-w-xs md:max-w-none">
+          {{ end }}
         </div>
+        <div class="md:w-2/3 text-center md:text-left">
+          {{ partial "section.html" (dict "page" (site.GetPage "over-mij")) }}
+        </div>
+      </div>
     </section>
 
     <!-- Werkwijze Sectie -->
-    <!-- Content komt van content/werkwijze.md, beheerd via CMS -->
     <section id="werkwijze" class="bg-secondary py-16 px-4 rounded-lg shadow-inner">
-        <div class="container mx-auto">
-            <h2 class="section-heading">Onze Werkwijze</h2>
-            {{ with (index (where .Site.RegularPages "File.Base" "werkwijze.md") 0) }}
-                {{ .Params.intro_text | markdownify }}
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {{ range .Params.steps }}
-                    <div class="card text-center">
-                        <div class="text-primary text-5xl mb-4">
-                            <!-- SVG icon placeholder, in een echte implementatie zou je hier dynamische icons kunnen toevoegen -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">{{ .title }}</h3>
-                        <p class="text-gray-600">{{ .description | markdownify }}</p>
-                    </div>
-                    {{ end }}
-                </div>
-
-                <div class="mt-16">
-                    <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Veelgestelde Vragen (FAQ)</h3>
-                    {{ .Params.faq_intro | markdownify }}
-                    <div class="space-y-4 max-w-3xl mx-auto">
-                        {{ range .Params.faq_items }}
-                        <div class="card">
-                            <details class="group">
-                                <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-gray-800">
-                                    {{ .question }}
-                                    <span class="group-open:rotate-180 transition-transform">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </span>
-                                </summary>
-                                <p class="mt-2 text-gray-600">{{ .answer | markdownify }}</p>
-                            </details>
-                        </div>
-                        {{ end }}
-                    </div>
-                </div>
-            {{ else }}
-            <!-- Placeholder voor Werkwijze als content/werkwijze.md nog niet bestaat -->
-            <p class="text-center text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
-                Een helder stappenplan voor jullie onvergetelijke dag. Van het eerste contact tot het ja-woord, ik begeleid jullie met persoonlijke aandacht.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card text-center">
-                    <div class="text-primary text-5xl mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.106 9.106 0 01-4.674-1.197M12 21c-4.418 0-8-4.03-8-9 0-4.418 4.03-8 9-8s9 4.03 9 8c0 1.09-.208 2.13-.597 3.105M12 14v4m0 0l-2-2m2 2l2-2" /></svg></div>
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">1. Kennismakingsgesprek</h3>
-                    <p class="text-gray-600">We ontmoeten elkaar vrijblijvend om jullie wensen te bespreken en te kijken of er een klik is.</p>
-                </div>
-                <div class="card text-center">
-                    <div class="text-primary text-5xl mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div>
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">2. Voorbereiding Ceremonie</h3>
-                    <p class="text-gray-600">Na de kennismaking ga ik aan de slag met jullie persoonlijke verhaal.</p>
-                </div>
-                <div class="card text-center">
-                    <div class="text-primary text-5xl mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">3. De Grote Dag!</h3>
-                    <p class="text-gray-600">Op jullie trouwdag zorg ik voor een vlekkeloze en ontroerende ceremonie.</p>
-                </div>
-            </div>
-            <div class="mt-16">
-                <h3 class="text-3xl font-bold text-gray-800 text-center mb-8">Veelgestelde Vragen (FAQ)</h3>
-                <div class="space-y-4 max-w-3xl mx-auto">
-                    <div class="card">
-                        <details class="group">
-                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-gray-800">Wat zijn de kosten voor een ceremonie?<span class="group-open:rotate-180 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span></summary>
-                            <p class="mt-2 text-gray-600">De kosten zijn afhankelijk van jullie specifieke wensen en de locatie. Neem contact op voor een vrijblijvende offerte op maat.</p>
-                        </details>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        </div>
+      <div class="container mx-auto">
+        {{ partial "section.html" (dict "page" (site.GetPage "werkwijze")) }}
+      </div>
     </section>
 
     <!-- Blog (Nieuws & Inspiratie) Sectie -->
@@ -333,58 +256,37 @@
     </section>
 
     <!-- Contact Sectie -->
-    <!-- Content komt van content/contact.md, beheerd via CMS -->
     <section id="contact" class="bg-primary text-white py-16 px-4 rounded-t-lg shadow-inner">
-        <div class="container mx-auto text-center max-w-2xl">
-            <h2 class="section-heading text-white">Neem Contact Op</h2>
-            {{ with (index (where .Site.RegularPages "File.Base" "contact.md") 0) }}
-                {{ .Params.intro_text | markdownify }}
-            {{ else }}
-            <p class="text-lg mb-8">
-                Hebben jullie vragen of willen jullie een kennismakingsgesprek plannen? Neem gerust contact op! Ik streef ernaar om binnen 24 uur te reageren.
-            </p>
-            {{ end }}
-
-            <!-- Contact Form (voor Netlify Forms) -->
-            <form name="contact" id="contactForm" method="POST" data-netlify="true" class="bg-white p-8 rounded-lg shadow-xl text-gray-800">
-                <div class="mb-4 text-left">
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Naam:</label>
-                    <input type="text" id="name" name="name" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div class="mb-4 text-left">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">E-mailadres:</label>
-                    <input type="email" id="email" name="email" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div class="mb-4 text-left">
-                    <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Telefoonnummer (optioneel):</label>
-                    <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div class="mb-6 text-left">
-                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Bericht:</label>
-                    <textarea id="message" name="message" rows="5" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                </div>
-                <button type="submit" class="btn-primary w-full">Verstuur Bericht</button>
-            </form>
-
-            <!-- Succesbericht voor formulier -->
-            <div id="formSuccessMessage" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-md shadow-md" role="alert">
-                <p class="font-semibold">Bedankt voor je bericht!</p>
-                <p>We nemen zo spoedig mogelijk contact met je op.</p>
-            </div>
-            <!-- Foutbericht voor formulier -->
-            <div id="formErrorMessage" class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-md shadow-md" role="alert">
-                <p class="font-semibold">Oeps! Er ging iets mis.</p>
-                <p>Probeer het later opnieuw of neem direct contact op via e-mail.</p>
-            </div>
-
-            <p class="text-sm mt-8 text-white opacity-80">
-                {{ with (index (where .Site.RegularPages "File.Base" "contact.md") 0) }}
-                    {{ .Params.privacy_text | markdownify }}
-                {{ else }}
-                Door dit formulier te versturen, gaat u akkoord met onze beknopte privacyverklaring. Uw gegevens worden uitsluitend gebruikt om contact met u op te nemen naar aanleiding van uw bericht.
-                {{ end }}
-            </p>
-        </div>
+      <div class="container mx-auto text-center max-w-2xl">
+        {{ partial "section.html" (dict "page" (site.GetPage "contact")) }}
+        <!-- Contact Form (voor Netlify Forms) -->
+        <form name="contact" id="contactForm" method="POST" data-netlify="true" class="bg-white p-8 rounded-lg shadow-xl text-gray-800">
+          <div class="mb-4 text-left">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Naam:</label>
+            <input type="text" id="name" name="name" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          </div>
+          <div class="mb-4 text-left">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">E-mailadres:</label>
+            <input type="email" id="email" name="email" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          </div>
+          <div class="mb-4 text-left">
+            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Telefoonnummer (optioneel):</label>
+            <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          </div>
+          <div class="mb-6 text-left">
+            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Bericht:</label>
+            <textarea id="message" name="message" rows="5" required class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full">Verstuur Bericht</button>
+        </form>
+        <p class="text-sm mt-8 text-white opacity-80">
+          {{ with (site.GetPage "contact") }}
+            {{ .Params.privacy_text | markdownify }}
+          {{ else }}
+            Door dit formulier te versturen, gaat u akkoord met onze beknopte privacyverklaring. Uw gegevens worden uitsluitend gebruikt om contact met u op te nemen naar aanleiding van uw bericht.
+          {{ end }}
+        </p>
+      </div>
     </section>
 
     <!-- Footer -->
