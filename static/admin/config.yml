@@ -32,7 +32,7 @@ collections:
           - {label: "CTA 2 Link", name: "cta2_link", widget: "string", default: "/contact/"}
           - {label: "Geografische Focus Tekst", name: "geo_focus_text", widget: "string", default: "Jouw BABS in Voorne-Putten en Omgeving: Hellevoetsluis, Brielle, Westvoorne, Nissewaard en meer."}
 
-      - file: "content/over-mij.md" # Pad naar het Markdown bestand voor de Over mij pagina
+      - file: "content/over-mij/index.md" # Pad naar het Markdown bestand voor de Over mij pagina
         label: "Over mij"
         name: "about"
         fields:

@@ -182,7 +182,7 @@
             </div>
             <div class="md:w-2/3 text-center md:text-left">
                 <h2 class="section-heading text-left">Over mij</h2>
-                {{ with (index (where .Site.RegularPages "File.Base" "over-mij.md") 0) }}
+                {{ with site.GetPage "over-mij" }}
                   {{ .Content }}
                 {{ end }}
             </div>
