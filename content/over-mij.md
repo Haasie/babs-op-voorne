@@ -3,7 +3,7 @@ title: Over mij
 seo_title: Over Babs op Voorne | Persoonlijke Trouwambtenaar
 seo_description: Leer meer over Richard, jouw persoonlijke BABS/ zelfstandig
   Trouwambtenaar, zijn passie en kernwaarden voor een unieke huwelijksceremonie.
-portrait_image: /uploads/babsrichard.jpg
+portrait_image: /uploads/babsrichard.png
 values:
   - value: Respect
   - value: Eerlijkheid
